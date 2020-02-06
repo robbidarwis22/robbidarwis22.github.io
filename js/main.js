@@ -37,26 +37,26 @@ $(window).on('load', function() {
 	/* -----------------------------------
 			  2. Sound Setup
 	----------------------------------- */
-    $('body').append('<audio loop autoplay volume="1" id="audio-player"><source src="music.mp3" type="audio/mpeg"></audio>');
-    var audio = document.getElementById("audio-player");
-    audio.volume = 0.2;
-
-if($(window).length) {
-    $('.music-bg').css({'visibility':'visible'});
-    $('body').addClass("audio-on");
-    if ($('body').hasClass('audio-off')) {
-        $('body').removeClass('audio-on');
-    } 
-    $(".music-bg").on('click', function() {
-        $('body').toggleClass("audio-on audio-off");         
-        if ($('body').hasClass('audio-off')) {
-            audio.pause();
-        } 
-        if ($('body').hasClass('audio-on')) {
-            audio.play();
-        }
-    });
-}
+	$('body').append('<audio loop autoplay volume="1" id="audio-player"><source src="music.mp3" type="audio/mpeg"></audio>');
+    	var audio = document.getElementById("audio-player");
+    	audio.volume = 0.2;
+	
+	if($(window).length) {
+		$('.music-bg').css({'visibility':'visible'});
+		$('body').addClass("audio-on");
+		if ($('body').hasClass('audio-off')) {
+        	$('body').removeClass('audio-on');
+		} 
+		$(".music-bg").on('click', function() {
+			$('body').toggleClass("audio-on audio-off");         
+			if ($('body').hasClass('audio-off')) {
+				audio.pause();
+			} 
+			if ($('body').hasClass('audio-on')) {
+				audio.play();
+			}
+		});
+	}
 	
 	/* -----------------------------------
 			3. Isotope Portfolio Setup
@@ -188,76 +188,49 @@ $(document).ready(function() {
 	/* -----------------------------------
 	    13. Validate Contact Form
 	----------------------------------- */
-	if ($("#myform").length) {
-        $("#myform").validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 2
-                },
+	// if ($("#myform").length) {
+    //     $("#myform").validate({
+    //         rules: {
+    //             name: {
+    //                 required: true,
+    //                 minlength: 2
+    //             },
 
-                email: "required",
+    //             email: "required",
 				
-            },
+    //         },
 
-            messages: {
-                name: "Please enter your name",
-                email: "Please enter your email address"
-            },
+    //         messages: {
+    //             name: "Please enter your name",
+    //             email: "Please enter your email address"
+    //         },
 
-            // submitHandler:function (form) {
-            //     var myform = $("form#myform");
-            //     myform.submit(function(event){
-            //         event.preventDefault();
+            
+    //         submitHandler: function (form) {
+    //             $.ajax({
+    //                 type: "POST",
+    //                 url: "/modernPort/mail.js",
+    //                 success: function () {
+    //                     $( "#loader").hide();
+    //                     $( "#success").slideDown( "slow" );
+    //                     setTimeout(function() {
+    //                     $( "#success").slideUp( "slow" );
+    //                     }, 3000);
+    //                     form.reset();
+    //                 },
+    //                 error: function() {
+    //                     $( "#loader").hide();
+    //                     $( "#error").slideDown( "slow" );
+    //                     setTimeout(function() {
+    //                     $( "#error").slideUp( "slow" );
+    //                     }, 3000);
+    //                 }
+    //             });
+    //             return false;
+    //         }
 
-            //         var params = myform.serializeArray().reduce(function(obj, item) {
-            //         obj[item.name] = item.value;
-            //         return obj;
-            //     }, {});
-
-            //     // Change to your service ID, or keep using the default service
-            //     var service_id = "default_service";
-
-            //     var template_id = "template_fJ2jPkWy";
-            //     myform.find("button").text("Sending...");
-            //     emailjs.send(service_id, template_id, params)
-            //     .then(function(){ 
-            //         alert("Sent!");
-            //         myform.find("button").text("Send Message");
-            //         document.getElementById("myform").reset();
-            //       }, function(err) {
-            //         alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
-            //         myform.find("button").text("Send");
-            //      });
-                    
-            //     return false;
-            //     });
-            // }
-            submitHandler: function (form) {
-                $.ajax({
-                    type: "POST",
-                    url: "/modernPort/mail.js",
-                    success: function () {
-                        $( "#loader").hide();
-                        $( "#success").slideDown( "slow" );
-                        setTimeout(function() {
-                        $( "#success").slideUp( "slow" );
-                        }, 3000);
-                        form.reset();
-                    },
-                    error: function() {
-                        $( "#loader").hide();
-                        $( "#error").slideDown( "slow" );
-                        setTimeout(function() {
-                        $( "#error").slideUp( "slow" );
-                        }, 3000);
-                    }
-                });
-                return false;
-            }
-
-        });
-    }
+    //     });
+    // }
 	
 	/* Google Map Setup */
     if($('#map').length) {
